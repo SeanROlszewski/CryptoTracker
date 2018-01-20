@@ -1,36 +1,35 @@
-//
-//  CryptoTrackerTests.swift
-//  CryptoTrackerTests
-//
-//  Created by seandorian on 1/17/18.
-//  Copyright © 2018 Sean Olszewski. All rights reserved.
-//
-
 import XCTest
 @testable import CryptoTracker
+import Foundation
 
-class CryptoTrackerTests: XCTestCase {
-    
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+//https://min-api.cryptocompare.com/data/histoday?fsym=ETH&tsym=BTC&limit=60&aggregate=1&toTs=1516227914&extraParams=your_app_name
+
+class CryptoCompareResponseTests: XCTestCase {
+    func test_deserialization() {
+        
+        let path = Bundle(for: CryptoCompareResponseTests.self).path(forResource: "CryptoCompareResponse", ofType: "json")!
+        let examplePayload = try! Data(contentsOf: URL(fileURLWithPath: path))
+        
+        
+        guard let response = try? JSONDecoder().decode(CryptoCompareResponse.self, from: examplePayload) else {
+            XCTFail("Was unable to decode the data from the payload")
+            return
         }
+        
+        guard response.data.count == 3 else {
+            XCTFail("Expected there to be 3 data points, but got \(response.data.count)")
+            return
+        }
+        
+        XCTAssertEqual(response.data[0].time, 1515801600)
+        XCTAssertEqual(response.data[0].closingPrice, 1272.88, accuracy: 0.01)
+        XCTAssertEqual(response.data[0].highPrice, 1404.95, accuracy: 0.01)
+        XCTAssertEqual(response.data[0].lowPrice, 1193, accuracy: 0.01)
+        XCTAssertEqual(response.data[0].openingPrice, 1193, accuracy: 0.01)
+        XCTAssertEqual(response.data[0].volumeTo, 100109161.39, accuracy: 0.01)
+        XCTAssertEqual(response.data[0].volumeFrom, 75445.22, accuracy: 0.01)
+
+        XCTAssertEqual(response.data[1].time, 1516060800)
+        XCTAssertEqual(response.data[2].time, 1516320000)
     }
-    
 }

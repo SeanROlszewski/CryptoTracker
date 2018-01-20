@@ -14,6 +14,8 @@
 		9D4B0EBA200FFAF0009FA454 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D4B0EB8200FFAF0009FA454 /* LaunchScreen.storyboard */; };
 		9D4B0EC5200FFAF0009FA454 /* CryptoTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4B0EC4200FFAF0009FA454 /* CryptoTrackerTests.swift */; };
 		9D4B0ED0200FFAF0009FA454 /* CryptoTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4B0ECF200FFAF0009FA454 /* CryptoTrackerUITests.swift */; };
+		9D9092C22013B17900C4E80D /* CryptoCompareResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 9D9092C12013B17900C4E80D /* CryptoCompareResponse.json */; };
+		9D9092C42013BA0C00C4E80D /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9092C32013BA0C00C4E80D /* Models.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		9D4B0ECB200FFAF0009FA454 /* CryptoTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CryptoTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D4B0ECF200FFAF0009FA454 /* CryptoTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTrackerUITests.swift; sourceTree = "<group>"; };
 		9D4B0ED1200FFAF0009FA454 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D9092C12013B17900C4E80D /* CryptoCompareResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CryptoCompareResponse.json; sourceTree = "<group>"; };
+		9D9092C32013BA0C00C4E80D /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Models.swift; path = CryptoTracker/Models.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,7 @@
 		9D4B0EA3200FFAF0009FA454 = {
 			isa = PBXGroup;
 			children = (
+				9D9092C32013BA0C00C4E80D /* Models.swift */,
 				9D4B0EAE200FFAF0009FA454 /* CryptoTracker */,
 				9D4B0EC3200FFAF0009FA454 /* CryptoTrackerTests */,
 				9D4B0ECE200FFAF0009FA454 /* CryptoTrackerUITests */,
@@ -110,6 +115,7 @@
 		9D4B0EC3200FFAF0009FA454 /* CryptoTrackerTests */ = {
 			isa = PBXGroup;
 			children = (
+				9D9092C12013B17900C4E80D /* CryptoCompareResponse.json */,
 				9D4B0EC4200FFAF0009FA454 /* CryptoTrackerTests.swift */,
 				9D4B0EC6200FFAF0009FA454 /* Info.plist */,
 			);
@@ -242,6 +248,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D9092C22013B17900C4E80D /* CryptoCompareResponse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D9092C42013BA0C00C4E80D /* Models.swift in Sources */,
 				9D4B0EB2200FFAF0009FA454 /* ViewController.swift in Sources */,
 				9D4B0EB0200FFAF0009FA454 /* AppDelegate.swift in Sources */,
 			);
