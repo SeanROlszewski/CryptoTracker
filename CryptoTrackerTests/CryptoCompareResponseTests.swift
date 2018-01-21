@@ -1,0 +1,33 @@
+import XCTest
+@testable import CryptoTracker
+import Foundation
+
+class CryptoCompareResponseTests: XCTestCase {
+    func test_deserialization() {
+        
+        let path = Bundle(for: CryptoCompareResponseTests.self).path(forResource: "CryptoCompareResponse", ofType: "json")!
+        let examplePayload = try! Data(contentsOf: URL(fileURLWithPath: path))
+        
+        guard let response = try? JSONDecoder().decode(CryptoCompareResponse.self, from: examplePayload) else {
+            XCTFail("Was unable to decode the data from the payload")
+            return
+        }
+        
+        guard response.data.count == 3 else {
+            XCTFail("Expected there to be 3 data points, but got \(response.data.count)")
+            return
+        }
+        
+        XCTAssertEqual(response.data[0].time, 1515801600)
+        XCTAssertEqual(response.data[0].closingPrice, 1272.88, accuracy: 0.01)
+        XCTAssertEqual(response.data[0].highPrice, 1404.95, accuracy: 0.01)
+        XCTAssertEqual(response.data[0].lowPrice, 1193, accuracy: 0.01)
+        XCTAssertEqual(response.data[0].openingPrice, 1193, accuracy: 0.01)
+        XCTAssertEqual(response.data[0].volumeTo, 100109161.39, accuracy: 0.01)
+        XCTAssertEqual(response.data[0].volumeFrom, 75445.22, accuracy: 0.01)
+
+        XCTAssertEqual(response.data[1].time, 1516060800)
+        XCTAssertEqual(response.data[2].time, 1516320000)
+    }
+}
+
