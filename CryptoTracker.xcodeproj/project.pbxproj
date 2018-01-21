@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D45133B2015187000161C77 /* CryptoCompareClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45133A2015187000161C77 /* CryptoCompareClient.swift */; };
 		9D4B0EB0200FFAF0009FA454 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4B0EAF200FFAF0009FA454 /* AppDelegate.swift */; };
 		9D4B0EB2200FFAF0009FA454 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4B0EB1200FFAF0009FA454 /* ViewController.swift */; };
 		9D4B0EB5200FFAF0009FA454 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D4B0EB3200FFAF0009FA454 /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9D45133A2015187000161C77 /* CryptoCompareClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CryptoCompareClient.swift; path = CryptoTracker/CryptoCompareClient.swift; sourceTree = "<group>"; };
 		9D4B0EAC200FFAF0009FA454 /* CryptoTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D4B0EAF200FFAF0009FA454 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D4B0EB1200FFAF0009FA454 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 		9D4B0EA3200FFAF0009FA454 = {
 			isa = PBXGroup;
 			children = (
+				9D45133A2015187000161C77 /* CryptoCompareClient.swift */,
 				9D9092C32013BA0C00C4E80D /* Models.swift */,
 				9D4B0EAE200FFAF0009FA454 /* CryptoTracker */,
 				9D4B0EC3200FFAF0009FA454 /* CryptoTrackerTests */,
@@ -269,6 +272,7 @@
 				9D9092C42013BA0C00C4E80D /* Models.swift in Sources */,
 				9D4B0EB2200FFAF0009FA454 /* ViewController.swift in Sources */,
 				9D4B0EB0200FFAF0009FA454 /* AppDelegate.swift in Sources */,
+				9D45133B2015187000161C77 /* CryptoCompareClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

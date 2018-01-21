@@ -1,7 +1,11 @@
 import Foundation
 
+enum CryptoCurrency: String {
+    case xrp = "XRP"
+}
+
 struct DailyHistoricalData: Codable {
-    let time: Int
+    let time: Double
     let closingPrice: Double
     let openingPrice: Double
     let highPrice: Double
@@ -21,7 +25,7 @@ struct DailyHistoricalData: Codable {
 }
 
 struct CryptoCompareResponse: Codable {
-    let data: [DailyHistoricalData]
+    let data: [DailyHistoricalData] 
     
     enum CodingKeys: String, CodingKey {
         case data = "Data"

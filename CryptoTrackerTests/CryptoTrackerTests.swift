@@ -2,14 +2,11 @@ import XCTest
 @testable import CryptoTracker
 import Foundation
 
-//https://min-api.cryptocompare.com/data/histoday?fsym=ETH&tsym=BTC&limit=60&aggregate=1&toTs=1516227914&extraParams=your_app_name
-
 class CryptoCompareResponseTests: XCTestCase {
     func test_deserialization() {
         
         let path = Bundle(for: CryptoCompareResponseTests.self).path(forResource: "CryptoCompareResponse", ofType: "json")!
         let examplePayload = try! Data(contentsOf: URL(fileURLWithPath: path))
-        
         
         guard let response = try? JSONDecoder().decode(CryptoCompareResponse.self, from: examplePayload) else {
             XCTFail("Was unable to decode the data from the payload")
@@ -31,24 +28,6 @@ class CryptoCompareResponseTests: XCTestCase {
 
         XCTAssertEqual(response.data[1].time, 1516060800)
         XCTAssertEqual(response.data[2].time, 1516320000)
-    }
-}
-
-enum CryptoCurrency {
-    case xrp
-}
-
-class CryptoCompareClient {
-    
-    let session = URLSession(configuration: .default)
-    
-    private func url(for currency: CryptoCurrency, from startDate: Date, to endDate: Date) -> URL {
-        return URL(string: "https://google.com")!
-    }
-    
-    func getHistoricalData(forCurrency currency: CryptoCurrency, from startDate: Date,  to endDate: Date, using completionHandler: (CryptoCompareResponse)->()) {
-        let task = session.dataTask(with: url(for: currency, from: startDate,  to: endDate))
-        
     }
 }
 
@@ -79,12 +58,17 @@ class CryptoCompareClientTests: XCTestCase {
                                         return
                                     }
                                     
+                                    XCTAssertEqual(startDate.timeIntervalSince1970,
+                                                   response.data[0].time)
+                                    
+                                    XCTAssertEqual(endDate.timeIntervalSince1970,
+                                                   response.data[2].time)
+                                    
                                     retrievalExpectation.fulfill()
         }
         
         wait(for: [retrievalExpectation], timeout: 5.0)
         
     }
-    
 }
 
