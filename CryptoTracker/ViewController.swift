@@ -9,8 +9,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchDataForChart()
-        configureChartView()
+
     }
     
     func configureChartView() {
@@ -27,7 +26,6 @@ class ViewController: UIViewController {
         xAxis.drawGridLinesEnabled = false
         xAxis.centerAxisLabelsEnabled = false
         xAxis.granularityEnabled = false
-        xAxis.valueFormatter = DateAxisValueFormatter()
         
         let yAxis = lineChartView.leftAxis
         yAxis.drawGridLinesEnabled = false
@@ -46,13 +44,7 @@ class ViewController: UIViewController {
 extension ViewController {
     
     func fetchDataForChart() {
-        let thirtyDaysAgo = Calendar.current.date(byAdding: .day, value: -30, to: todaysDate)!
         
-        cryptoCompareClient.getHistoricalData(forCurrency: .xrp,
-                                              from: thirtyDaysAgo,
-                                              to: todaysDate) { response in
-                    self.handle(response)
-        }
     }
     
     private func handle(_ response: CryptoCompareResponse) {
@@ -60,16 +52,12 @@ extension ViewController {
         let entries = chartData(fromDailyData: response.data)
         let historicalDataSet = prepareChartData(from: entries)
         
-        DispatchQueue.main.async {
-            let data = LineChartData(dataSet: historicalDataSet)
-            self.lineChartView.data = data
-        }
+        let data = LineChartData(dataSet: historicalDataSet)
+        self.lineChartView.data = data
     }
     
     func chartData(fromDailyData data: [DailyHistoricalData]) -> [ChartDataEntry] {
-        return data.map { datum in
-            ChartDataEntry(x: datum.time, y: datum.closingPrice)
-        }
+        return []
     }
     
     private func prepareChartData(from dataEntries: [ChartDataEntry]) -> LineChartDataSet {
