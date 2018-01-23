@@ -1,10 +1,15 @@
 import Foundation
-
-class CryptoCompareClient {
+protocol CryptoCompareIntegration {
+    func getHistoricalData(forCurrency currency: CryptoCurrency,
+    from startDate: Date,
+    to endDate: Date,
+    using completionHandler: @escaping (CryptoCompareResponse)->())
+}
+class CryptoCompareClient: CryptoCompareIntegration {
     
     let session = URLSession(configuration: .default)
     
-    private func url(for currency: CryptoCurrency, from startDate: Date, to endDate: Date) -> URL {
+    private func dailyHistoricalDataUrl(for currency: CryptoCurrency, from startDate: Date, to endDate: Date) -> URL {
         
         let numberOfDays = Calendar.current.dateComponents([.year, .month, .day], from: startDate, to: endDate).day!
         
@@ -19,8 +24,8 @@ class CryptoCompareClient {
                            from startDate: Date,
                            to endDate: Date,
                            using completionHandler: @escaping (CryptoCompareResponse)->()) {
-        
-        let task = session.dataTask(with: url(for: currency, from: startDate,  to: endDate)) { data, _ , _ in
+        let url = dailyHistoricalDataUrl(for: currency, from: startDate,  to: endDate)
+        let task = session.dataTask(with: url) { data, _, _ in
             
             guard let responseData = data,
                 let dataPoints = try? JSONDecoder().decode(CryptoCompareResponse.self, from: responseData) else {
