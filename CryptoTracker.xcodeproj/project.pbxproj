@@ -60,7 +60,7 @@
 		9D4513402015198400161C77 /* CryptoCompareIntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CryptoCompareIntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D4513422015198400161C77 /* CryptoCompareIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCompareIntegrationTests.swift; sourceTree = "<group>"; };
 		9D4513442015198400161C77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9D45134A20151B7200161C77 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		9D45134A20151B7200161C77 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9D4B0EAC200FFAF0009FA454 /* CryptoTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D4B0EAF200FFAF0009FA454 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D4B0EB1200FFAF0009FA454 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -163,7 +163,6 @@
 				9D4B0EAF200FFAF0009FA454 /* AppDelegate.swift */,
 				9D4B0EB1200FFAF0009FA454 /* ViewController.swift */,
 				9D4B0EB3200FFAF0009FA454 /* Main.storyboard */,
-				9D18AD0D2016C61A00BCA5B3 /* ViewControllerTests.swift */,
 				9D4B0EB6200FFAF0009FA454 /* Assets.xcassets */,
 				9D4B0EB8200FFAF0009FA454 /* LaunchScreen.storyboard */,
 				9D4B0EBB200FFAF0009FA454 /* Info.plist */,
@@ -174,6 +173,7 @@
 		9D4B0EC3200FFAF0009FA454 /* CryptoTrackerTests */ = {
 			isa = PBXGroup;
 			children = (
+				9D18AD0D2016C61A00BCA5B3 /* ViewControllerTests.swift */,
 				9D18AD0F2016C9D900BCA5B3 /* DateAxisValueFormatterTests.swift */,
 				9D9092C12013B17900C4E80D /* CryptoCompareResponse.json */,
 				9D4B0EC4200FFAF0009FA454 /* CryptoCompareResponseTests.swift */,

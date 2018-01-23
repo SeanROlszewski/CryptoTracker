@@ -5,6 +5,7 @@ protocol CryptoCompareIntegration {
     to endDate: Date,
     using completionHandler: @escaping (CryptoCompareResponse)->())
 }
+
 class CryptoCompareClient: CryptoCompareIntegration {
     
     let session = URLSession(configuration: .default)

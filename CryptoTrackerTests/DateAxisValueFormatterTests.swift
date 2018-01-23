@@ -25,6 +25,5 @@ class DateAxisValueFormatterTests: XCTestCase {
         XCTAssertEqual("12/01/17", value1)
         XCTAssertEqual("06/29/15", value2)
 
-        
     }
 }

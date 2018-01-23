@@ -10,7 +10,6 @@ class DateAxisValueFormatter: NSObject, IAxisValueFormatter {
     
     func stringForValue(_ value: Double, axis: AxisBase?) -> String {
         let date = Date(timeIntervalSince1970: value)
-        return dateFormatter.string(from: date
-        )
+        return dateFormatter.string(from: date)
     }
 }

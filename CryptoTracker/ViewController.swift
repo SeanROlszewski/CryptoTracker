@@ -4,9 +4,12 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var lineChartView: LineChartView!
+    lazy var cryptoCompareClient: CryptoCompareIntegration = CryptoCompareClient()
+    lazy var todaysDate: Date = Date()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        fetchDataForChart()
         configureChartView()
     }
     
@@ -38,7 +41,17 @@ class ViewController: UIViewController {
 }
 
 extension ViewController {
+    
+    func chartData(fromDailyData data: [DailyHistoricalData]) -> [ChartData] {
+        return []
+    }
+    
     func fetchDataForChart() {
+        let thirtyDaysAgo = Calendar.current.date(byAdding: .day, value: -30, to: todaysDate)!
         
+        cryptoCompareClient.getHistoricalData(forCurrency: .xrp,
+        from: todaysDate, to: thirtyDaysAgo) { historicalData in
+            
+        }
     }
 }
