@@ -52,8 +52,8 @@ class ViewControllerTests: XCTestCase {
     func test_viewController_getsPricesAfterViewLoads() {
         
         XCTAssertEqual(mockClient.lastCurrency, .xrp)
-        XCTAssertEqual(mockClient.lastStartDate, startDate)
-        XCTAssertEqual(mockClient.lastEndDate, endDate)
+        XCTAssertEqual(mockClient.lastStartDate, endDate)
+        XCTAssertEqual(mockClient.lastEndDate, startDate)
         
         XCTAssertEqual(mockClient.methodCalls, ["getHistoricalData(forCurrency:from:to:using:)"])
         

@@ -10,9 +10,9 @@ class CryptoCompareClient: CryptoCompareIntegration {
     
     let session = URLSession(configuration: .default)
     
-    private func dailyHistoricalDataUrl(for currency: CryptoCurrency, from startDate: Date, to endDate: Date) -> URL {
+    func dailyHistoricalDataUrl(for currency: CryptoCurrency, from startDate: Date, to endDate: Date) -> URL {
         
-        let numberOfDays = Calendar.current.dateComponents([.year, .month, .day], from: startDate, to: endDate).day! * -1
+        let numberOfDays = Calendar.current.dateComponents([.year, .month, .day], from: startDate, to: endDate).day!
         
         return URL(string:
             """
