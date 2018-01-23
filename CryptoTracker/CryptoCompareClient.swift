@@ -12,11 +12,11 @@ class CryptoCompareClient: CryptoCompareIntegration {
     
     private func dailyHistoricalDataUrl(for currency: CryptoCurrency, from startDate: Date, to endDate: Date) -> URL {
         
-        let numberOfDays = Calendar.current.dateComponents([.year, .month, .day], from: startDate, to: endDate).day!
+        let numberOfDays = Calendar.current.dateComponents([.year, .month, .day], from: startDate, to: endDate).day! * -1
         
         return URL(string:
             """
-            https://min-api.cryptocompare.com/data/histoday?fsym=\(currency.rawValue)&tsym=USD&limit=\(numberOfDays)&aggregate=1&toTs=\(endDate.timeIntervalSince1970)&extraParams=CryptoTracker
+            https://min-api.cryptocompare.com/data/histoday?fsym=\(currency.rawValue)&tsym=USD&limit=\(numberOfDays)&aggregate=1&toTs=\(Int(endDate.timeIntervalSince1970))&extraParams=CryptoTracker
             """
             )!
     }

@@ -2,7 +2,7 @@ import Charts
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var lineChartView: LineChartView!
     lazy var cryptoCompareClient: CryptoCompareIntegration = CryptoCompareClient()
     lazy var todaysDate: Date = Date()
@@ -14,44 +14,72 @@ class ViewController: UIViewController {
     }
     
     func configureChartView() {
-//        lineChartView.lineData = LineChartData(dataSet: <#T##IChartDataSet?#>)
+        
+        lineChartView.legend.enabled = false
+        lineChartView.rightAxis.enabled = false
+        lineChartView.chartDescription?.text = "The closing price of XRP for the past 30 days"
+
         let xAxis = lineChartView.xAxis
-        xAxis.labelPosition = .topInside
+        xAxis.labelPosition = .bottom
         xAxis.labelFont = .systemFont(ofSize: 10, weight: .light)
-        xAxis.labelTextColor = UIColor(red: 255/255, green: 192/255, blue: 56/255, alpha: 1)
+        xAxis.labelTextColor = .black
         xAxis.drawAxisLineEnabled = false
-        xAxis.drawGridLinesEnabled = true
-        xAxis.centerAxisLabelsEnabled = true
-        xAxis.granularity = 3600
-//        xAxis.valueFormatter = DateValueFormatter()
+        xAxis.drawGridLinesEnabled = false
+        xAxis.centerAxisLabelsEnabled = false
+        xAxis.granularityEnabled = false
+        xAxis.valueFormatter = DateAxisValueFormatter()
         
         let yAxis = lineChartView.leftAxis
-        yAxis.labelPosition = .insideChart
-        yAxis.labelFont = .systemFont(ofSize: 12, weight: .light)
-        yAxis.drawGridLinesEnabled = true
-        yAxis.granularityEnabled = true
+        yAxis.drawGridLinesEnabled = false
+        yAxis.drawLabelsEnabled = true
+        yAxis.granularityEnabled = false
         yAxis.axisMinimum = 0
-        yAxis.axisMaximum = 170
-        yAxis.yOffset = -9
-        yAxis.labelTextColor = UIColor(red: 255/255, green: 192/255, blue: 56/255, alpha: 1)
+        yAxis.axisMaximum = 2
+        yAxis.yOffset = 0
+        yAxis.labelTextColor = .black
         
-        
+        lineChartView.animate(xAxisDuration: 2.5)
     }
-
+    
 }
 
 extension ViewController {
-    
-    func chartData(fromDailyData data: [DailyHistoricalData]) -> [ChartData] {
-        return []
-    }
     
     func fetchDataForChart() {
         let thirtyDaysAgo = Calendar.current.date(byAdding: .day, value: -30, to: todaysDate)!
         
         cryptoCompareClient.getHistoricalData(forCurrency: .xrp,
-        from: todaysDate, to: thirtyDaysAgo) { historicalData in
-            
+                                              from: todaysDate,
+                                              to: thirtyDaysAgo) { response in
+                    self.handle(response)
         }
+    }
+    
+    private func handle(_ response: CryptoCompareResponse) {
+        
+        let entries = chartData(fromDailyData: response.data)
+        let historicalDataSet = prepareChartData(from: entries)
+        
+        DispatchQueue.main.async {
+            let data = LineChartData(dataSet: historicalDataSet)
+            self.lineChartView.data = data
+        }
+    }
+    
+    func chartData(fromDailyData data: [DailyHistoricalData]) -> [ChartDataEntry] {
+        return data.map { datum in
+            ChartDataEntry(x: datum.time, y: datum.closingPrice)
+        }
+    }
+    
+    private func prepareChartData(from dataEntries: [ChartDataEntry]) -> LineChartDataSet {
+        let dataSet = LineChartDataSet(values: dataEntries, label: nil)
+        dataSet.axisDependency = .left
+        dataSet.circleRadius = 0
+        dataSet.label = ""
+        dataSet.drawValuesEnabled = false
+        dataSet.cubicIntensity = 1
+        dataSet.setColor(.black)
+        return dataSet
     }
 }

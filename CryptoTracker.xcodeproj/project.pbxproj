@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		187539368D8852981397C40D /* Pods_CryptoTrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A40BCD1D254F8BA0137BC06 /* Pods_CryptoTrackerTests.framework */; };
 		6470AB0402660EA1E80F2855 /* Pods_CryptoTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09303BFD3BBE8FACD4AFBAE6 /* Pods_CryptoTracker.framework */; };
 		9D18AD0E2016C61A00BCA5B3 /* ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D18AD0D2016C61A00BCA5B3 /* ViewControllerTests.swift */; };
 		9D18AD102016C9D900BCA5B3 /* DateAxisValueFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D18AD0F2016C9D900BCA5B3 /* DateAxisValueFormatterTests.swift */; };
@@ -52,7 +53,9 @@
 /* Begin PBXFileReference section */
 		09303BFD3BBE8FACD4AFBAE6 /* Pods_CryptoTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F353A3E58252962084F5EFC /* Pods-CryptoTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoTracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoTracker/Pods-CryptoTracker.debug.xcconfig"; sourceTree = "<group>"; };
+		3A40BCD1D254F8BA0137BC06 /* Pods_CryptoTrackerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoTrackerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BD98AAFE6CE0F47BF222D16 /* Pods-CryptoTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoTracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoTracker/Pods-CryptoTracker.release.xcconfig"; sourceTree = "<group>"; };
+		7E9A3CEB85AD40CBAB608BE5 /* Pods-CryptoTrackerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoTrackerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoTrackerTests/Pods-CryptoTrackerTests.release.xcconfig"; sourceTree = "<group>"; };
 		9D18AD0D2016C61A00BCA5B3 /* ViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewControllerTests.swift; path = CryptoTrackerTests/ViewControllerTests.swift; sourceTree = SOURCE_ROOT; };
 		9D18AD0F2016C9D900BCA5B3 /* DateAxisValueFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAxisValueFormatterTests.swift; sourceTree = "<group>"; };
 		9D18AD112016CEED00BCA5B3 /* DateAxisValueFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAxisValueFormatter.swift; sourceTree = "<group>"; };
@@ -76,6 +79,7 @@
 		9D4B0ED1200FFAF0009FA454 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D9092C12013B17900C4E80D /* CryptoCompareResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CryptoCompareResponse.json; sourceTree = "<group>"; };
 		9D9092C32013BA0C00C4E80D /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		E31328358F182923D0B72FC5 /* Pods-CryptoTrackerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoTrackerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoTrackerTests/Pods-CryptoTrackerTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				187539368D8852981397C40D /* Pods_CryptoTrackerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +121,8 @@
 			children = (
 				1F353A3E58252962084F5EFC /* Pods-CryptoTracker.debug.xcconfig */,
 				5BD98AAFE6CE0F47BF222D16 /* Pods-CryptoTracker.release.xcconfig */,
+				E31328358F182923D0B72FC5 /* Pods-CryptoTrackerTests.debug.xcconfig */,
+				7E9A3CEB85AD40CBAB608BE5 /* Pods-CryptoTrackerTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -195,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				09303BFD3BBE8FACD4AFBAE6 /* Pods_CryptoTracker.framework */,
+				3A40BCD1D254F8BA0137BC06 /* Pods_CryptoTrackerTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -244,9 +252,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9D4B0ED7200FFAF0009FA454 /* Build configuration list for PBXNativeTarget "CryptoTrackerTests" */;
 			buildPhases = (
+				6AFD21123BC34AF925BBCD3D /* [CP] Check Pods Manifest.lock */,
 				9D4B0EBC200FFAF0009FA454 /* Sources */,
 				9D4B0EBD200FFAF0009FA454 /* Frameworks */,
 				9D4B0EBE200FFAF0009FA454 /* Resources */,
+				6318EB66CEC40ED552C3F2EC /* [CP] Embed Pods Frameworks */,
+				2E9F0229EFB45F178010789E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -365,6 +376,57 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2E9F0229EFB45F178010789E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CryptoTrackerTests/Pods-CryptoTrackerTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6318EB66CEC40ED552C3F2EC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CryptoTrackerTests/Pods-CryptoTrackerTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CryptoTrackerTests/Pods-CryptoTrackerTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6AFD21123BC34AF925BBCD3D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CryptoTrackerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		7A0EDB30A9C009C1B7C776F1 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -666,6 +728,7 @@
 		};
 		9D4B0ED8200FFAF0009FA454 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E31328358F182923D0B72FC5 /* Pods-CryptoTrackerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -682,6 +745,7 @@
 		};
 		9D4B0ED9200FFAF0009FA454 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E9A3CEB85AD40CBAB608BE5 /* Pods-CryptoTrackerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
