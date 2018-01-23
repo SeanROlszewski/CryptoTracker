@@ -34,7 +34,7 @@ class ViewController: UIViewController {
         yAxis.drawLabelsEnabled = true
         yAxis.granularityEnabled = false
         yAxis.axisMinimum = 0
-        yAxis.axisMaximum = 2
+        yAxis.axisMaximum = 4
         yAxis.yOffset = 0
         yAxis.labelTextColor = .black
         
@@ -49,8 +49,8 @@ extension ViewController {
         let thirtyDaysAgo = Calendar.current.date(byAdding: .day, value: -30, to: todaysDate)!
         
         cryptoCompareClient.getHistoricalData(forCurrency: .xrp,
-                                              from: todaysDate,
-                                              to: thirtyDaysAgo) { response in
+                                              from: thirtyDaysAgo,
+                                              to: todaysDate) { response in
                     self.handle(response)
         }
     }

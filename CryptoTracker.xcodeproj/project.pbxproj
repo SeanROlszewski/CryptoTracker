@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		187539368D8852981397C40D /* Pods_CryptoTrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A40BCD1D254F8BA0137BC06 /* Pods_CryptoTrackerTests.framework */; };
+		251E13BB2017B0EE0065B1EE /* CryptoCompareIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4513422015198400161C77 /* CryptoCompareIntegrationTests.swift */; };
 		6470AB0402660EA1E80F2855 /* Pods_CryptoTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09303BFD3BBE8FACD4AFBAE6 /* Pods_CryptoTracker.framework */; };
 		9D18AD0E2016C61A00BCA5B3 /* ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D18AD0D2016C61A00BCA5B3 /* ViewControllerTests.swift */; };
 		9D18AD102016C9D900BCA5B3 /* DateAxisValueFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D18AD0F2016C9D900BCA5B3 /* DateAxisValueFormatterTests.swift */; };
 		9D18AD122016CEED00BCA5B3 /* DateAxisValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D18AD112016CEED00BCA5B3 /* DateAxisValueFormatter.swift */; };
 		9D45133B2015187000161C77 /* CryptoCompareClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45133A2015187000161C77 /* CryptoCompareClient.swift */; };
-		9D4513432015198400161C77 /* CryptoCompareIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4513422015198400161C77 /* CryptoCompareIntegrationTests.swift */; };
 		9D45134B20151B7200161C77 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 9D45134A20151B7200161C77 /* Podfile */; };
 		9D4B0EB0200FFAF0009FA454 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4B0EAF200FFAF0009FA454 /* AppDelegate.swift */; };
 		9D4B0EB2200FFAF0009FA454 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4B0EB1200FFAF0009FA454 /* ViewController.swift */; };
@@ -485,7 +485,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D4513432015198400161C77 /* CryptoCompareIntegrationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,6 +505,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D18AD0E2016C61A00BCA5B3 /* ViewControllerTests.swift in Sources */,
+				251E13BB2017B0EE0065B1EE /* CryptoCompareIntegrationTests.swift in Sources */,
 				9D18AD102016C9D900BCA5B3 /* DateAxisValueFormatterTests.swift in Sources */,
 				9D4B0EC5200FFAF0009FA454 /* CryptoCompareResponseTests.swift in Sources */,
 			);
